@@ -3,7 +3,7 @@ public class PAM {
 
 public void ReglamentoPOO(){
 JOptionPane.showMessageDialog("Este es el reglamento para la clase de POO");
-JoptionPane.showMessageDialog("\n 1.-Se requieren 80% de asistencia para tener derecho a evaluacion de trabajos en clase.
+JoptionPane.showMessageDialog(" \n 1.-Se requieren 80% de asistencia para tener derecho a evaluacion de trabajos en clase
 \n2.-Se permiten 10 minutos de tolerancia y si el alumno llega despues de este tiempo puede permaneceren la clase, pero no se tomara la asistencia en clase (Solamente en los
 horarios de inicio 7:00 am y 14:00 pm)
 \n3. Las faltas deberan estar justificadas mediante el correo institucional con un plazo maximo de 24 horas posteriores a la hora de falta en clase mediante correo del tutor (a),
@@ -25,23 +25,36 @@ de tutores. En caso de no solucionarse pasar a la direccion del programa educati
 \n15.Cualquier situacion no prevista en el presente reglamento pasar directamente con la direccion del programa educativo.
 \n16. El dia destinado a entrega de calificaciones todos los estudiantes deben estar presentes, ese dia se entregaran examenes y se brindara retroalimentacion
 \n17.Este reglamento entra en vigor despues de que se firme o se acepte por la mayoria de los estudiantes asistentes a la primera sesion de la materia, una vez firmado o aceptado por el
-50% mas el jefe de grupo, es vigente para todo alumno inscrito en el curso aunque no este presente en la primera sesion.
-
-");
+50% mas el jefe de grupo, es vigente para todo alumno inscrito en el curso aunque no este presente en la primera sesion.");
 }
 public void LineamientosClassroom(){
-
+JoptionPane.showMessageDialog("\n 1.-Lineamientos ");
 }
 public void FechasDeParciales(){
-
+JoptionPane.showMessageDialog("\n 1.- Primer parcial: 30 de septiembre del 2025.
+\n 2.- Segundo parcial 4 de noviembre del 2025. 
+\n 2.- tercer parcial 2 de diciembre del 2025.");
 }
 public void PorcentajesPorParcial(){
-
+JoptionPane.showMessageDialog("\n 1.- Evidencia de conocimiento parcial 1 40% parcial 2 40% parcial 3 20% \n 2.-Evidencia de desempeno parcial 1 20% parcial 2 20%  parcial 3 10%  \n 3.-Evidencia de producto parcial 1 30% parcial 2 20%  parcial 3 40% \n 4.-Proyecto Integrador  parcial 1 10% parcial 2 20%  parcial 3 30%");
 }
 
 }
-
+public void reglasclase(){
+    String eleccion = JOptionPane.showInputDialog("Ingresa la opcion que deseas ver: ");
+    switch(eleccion){
+        case 1: inicio.ReglamentoPOO();
+        break;
+        case 2:inicio.LineamientosClassroom();
+        break;
+        case 3:inicio.FechasDeParciales();
+        break;
+        case 4:inicio.PorcentajesPorParcial();
+        break;
+        default system.out.println("Selecciona una opcion valida");
+    }
+}
 public static void main(String[] args){
-    PAM reglas = new reglas();
-
+    PAM reglas = new PAM();
+         reglas.reglasclase();
 }
