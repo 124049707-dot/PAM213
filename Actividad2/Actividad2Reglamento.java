@@ -4,9 +4,9 @@ public void ReglamentoPOO(){
 JOptionPane.showMessageDialog(null,"Este es el reglamento para la clase de POO");
 JOptionPane.showMessageDialog(null,
 "1.-Se requieren 80% de asistencia para tener derecho a evaluacion de trabajos en clase \n" +
-"2.-Se permiten 10 minutos de tolerancia y si el alumno llega despues de este tiempo puede permaneceren la clase, pero no se tomara la asistencia en clase Solamente en los horarios de inicio 7:00 am y 14:00 pm"+
+"2.-Se permiten 10 minutos de tolerancia y si el alumno llega despues de este tiempo puede permaneceren la clase, pero no se tomara la asistencia en clase Solamente en los horarios de inicio 7:00 am y 14:00 pm\n"+
 "3. Las faltas deberan estar justificadas mediante el correo institucional con un plazo maximo de 24 horas posteriores a la hora de falta en clase mediante correo del tutor (a),\n"+
-"justificantes entregados fuera de la fecha limite permitido no se aceptan, unicamente se aceptaran recetas medicas y citatorios juridicos.(De forma fisica deben ser presentados al  "+
+"justificantes entregados fuera de la fecha limite permitido no se aceptan, unicamente se aceptaran recetas medicas y citatorios juridicos.(De forma fisica deben ser presentados al\n3  "+
 "tutor para ser validados y de forma posterior emitidos).\n");
 }
 public void LineamientosClassroom(){
