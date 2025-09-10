@@ -1,2 +1,6 @@
-console.log({"username": "ryan",
-    "score":70.4});
+var nameuser = "ale";
+let lastname = "carter";
+
+nameuser ='pepe';
+
+console.log(nameuser)
