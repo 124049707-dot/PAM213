@@ -1,1 +1,2 @@
-document.write("<h1>HEllo World</h1>");
+console.log({"username": "ryan",
+    "score":70.4});
