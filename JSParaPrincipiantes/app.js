@@ -1,5 +1,7 @@
-let numberOne=100;
-let numberTwo=500;
+let passwordDB = "pepe123"
 
-let result = numberOne>numberTwo;
+let input = 'pepe123'
+
+let result = input == passwordDB;
+
 console.log(result);
