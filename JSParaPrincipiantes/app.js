@@ -1,4 +1,5 @@
-let name="John";
-let lastname="Carter";
-let completeName = name + lastname;
-console.log(completeName);
+let numberOne=100;
+let numberTwo=500;
+
+let result = numberOne>numberTwo;
+console.log(result);
