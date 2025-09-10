@@ -1,6 +1,4 @@
-var nameuser = "ale";
-let lastname = "carter";
-
-nameuser ='pepe';
-
-console.log(nameuser)
+let numberOne =60;
+let numberTwo=100;
+let result = numberOne * numberTwo;
+console.log(result);
