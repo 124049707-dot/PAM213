@@ -1,7 +1,7 @@
 function verificarUsuario(admin){
 return new Promise((resolve, reject)=>{
     setTimeout(()=>{
-        const usuario="admi";
+        const usuario="admin";
     if(usuario=== "admin"){
         resolve("Acceso concedido");
     }else{
