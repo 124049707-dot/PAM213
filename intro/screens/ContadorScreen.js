@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   },
   texto:{
     color: '#020202ff', 
+    //color: '#98159cff', 
     fontSize: 30,   
     fontFamily: 'Times New Roman',
     fontWeigth: 'bold',
