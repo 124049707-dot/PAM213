@@ -14,16 +14,12 @@ export default function App() {
        <Text style={styles.texto2} >{contador}:</Text>
       {/* <Text>Contador:{contador} </Text> */} {/* comentarios con shit+alt+a */} {/* //<Button></Button> */}
        {/*  <Text>{contador} </Text> */}
-
        <View style={styles.botonesContainer}> 
         <Button title="Agregar" onPress={()=>setContador(contador+1) }color='#311c7cff'/> {/* funcion flecha, apertura de autocierre, cosas mas simples */}
         <Button title="Quitar" onPress={()=>setContador(contador-1)}color='#311c7cff'/>
         <Button title="Reiniciar" onPress={()=>setContador(0)}color='#311c7cff'/>
         </View>
-
         <StatusBar style="auto" /> 
-
-        
       </View>
     
   );
