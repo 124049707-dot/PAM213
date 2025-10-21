@@ -47,8 +47,6 @@ export default function MenuScreen() {
                      <Button title='Pract: FlatList' onPress={()=>setScreen('flatlist')}color='#311c7cff' />
                      <Button title='Pract: Modal' onPress={()=>setScreen('modal')}color='#311c7cff' />
                      <Button title='Pract: BottomSheet' onPress={()=>setScreen('bottomsheet')}color='#311c7cff' />
-
-
                    </View>
                     )    
     }  
