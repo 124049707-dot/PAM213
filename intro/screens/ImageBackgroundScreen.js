@@ -1,9 +1,9 @@
 import React,{useEffect, useState} from 'react';
 import {View,Text, StyleSheet, ImageBackground, Image, TouchableOpacity,StatusBar}from 'react-native';
 const SPLASH_IMAGE= require('../assets/recursos/uicideBoy.webp');
-//const MAIN_IMAGE= require('../assets/recursos/Amochitoo.webp');}
+const MAIN_IMAGE= require('../assets/recursos/Amochitoo.webp');
 //const MAIN_IMAGE= require('../assets/recursos/scrim.jpg');
-const MAIN_IMAGE= require('../assets/recursos/nwd.jpg');
+//const MAIN_IMAGE= require('../assets/recursos/nwd.jpg');
 const LOGO_IMAGE= require('../assets/recursos/tumblr.jpg');
 export default function ImageBackgroundScreen(){
   const[isLoading,setIsLoading]=useState(true);
