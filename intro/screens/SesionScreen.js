@@ -1,44 +1,43 @@
-import React,{useEffect,useState} from 'react';
+import React,{useState} from 'react';//librerias
 import {View,Text,StyleSheet, ImageBackground,Image,TextInput,Switch,Button,TouchableOpacity} from 'react-native';
-import {StatusBar,Platform,Alert} from 'react-native';
+import {StatusBar,Platform,Alert} from 'react-native';//componentes
+
 const MAIN_IMAGE =require('../assets/recursos/helado.gif');
 export default function SesionScreen(){
+
   const[nombre,setNombre]=useState('');
   const[correo,setCorreo]=useState('');
+  //Almacena un mensaje de estado para el usuario "Faltan campos por llenar"
   const[mensaje,setMensaje]=useState('');
-  const[terminos,setTerminos]=useState('false');
-
-  const mostrarAlerta=(titulo,mensaje)=>{
-    if(Platform.OS=== 'web'){
-      alert(titulo + ' '+mensaje);
-    }else{
-      Alert.alert(titulo,mensaje);
-    }
-  };
+  //Almacena el estado del Switch
+  const[terminos,setTerminos]=useState(false);
+  
+  //Verifica si nombre o correo están vacíos
   const enviarDatos = () => {
   if (nombre.trim() === '' || correo.trim() === '') {
     Alert.alert('Campos incompletos', 'Por favor completa todos los campos antes de continuar.');
     setMensaje('Faltan campos por llenar');
     return;
   }
-
+  //verificar si el formato del correo es válido
   const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!regexCorreo.test(correo)) {
     Alert.alert('Correo no válido', 'Ingresa un correo electrónico válido ( ejemplo@gmail.com)');
     setMensaje('Correo no válido');
     return;
   }
-
+  //verificar los terminos
   if (!terminos) {
     Alert.alert('Términos no aceptados', 'Debes aceptar los términos y condiciones para continuar.');
     setMensaje('Términos no aceptados');
     return;
   }
 
-  //Alert.alert('Registro exitoso', ´Nombre: ${nombre}´, `Email:  ${correo}´);
+  //Al dar enviar sale el mensaje
   Alert.alert('Registro exitoso',`Usuario: ${nombre} \n Correo: ${correo}` );
   setMensaje('Datos enviados correctamente');
 };
+//estructura de la interfaz
 return (
     <ImageBackground
       source={MAIN_IMAGE}
