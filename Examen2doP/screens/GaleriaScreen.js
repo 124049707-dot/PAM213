@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import {View,Text, StyleSheet, ImageBackground, Image, TouchableOpacity,StatusBar}from 'react-native';
 const SPLASH_IMAGE= require('../assets/recursos/scrim.jpg');
-const MAIN_IMAGE= require('../assets/recursos/nwd.jpg');
-const LOGO_IMAGE= require('../assets/recursos/r&b.jpg');
+const MAIN_IMAGE= require('../assets/recursos/nw.jpg');
+const LOGO_IMAGE= require('../assets/recursos/ss.webp');
 
 export default function GaleriaScreen(){
   const[isLoading,setIsLoading]=useState(true);
@@ -30,7 +30,11 @@ export default function GaleriaScreen(){
     );   
   }
   return(
-    <ImageBackground
+     <ScrollView styles = {styles.scroll} contentContainerStyle={styles.content} 
+      showsVerticalScrollIndicator={true}  
+      persistentScrollbar={true} 
+      scrollEnabled={true}> 
+     <Image
     source={MAIN_IMAGE}
     resizeMode="cover"
     imageStyle={styles.mainImageStyle}
@@ -45,10 +49,16 @@ export default function GaleriaScreen(){
         >
           <Text style={styles.buttonText}>Empezar</Text>
         </TouchableOpacity>
-      </View>
- </ImageBackground>
+      </View> 
+   
+ </Image>
+  </ScrollView> 
+
   );
+
 }
+
+
 const styles = StyleSheet.create({
   splashBackground: {
     flex: 1,
@@ -59,6 +69,15 @@ const styles = StyleSheet.create({
   },
   splashImageStyle: {
     opacity: 0.85,
+  },
+   scroll: {
+    flex:1,
+    marginRadius:10,
+    backgroundColor:'#f9fafb',
+  },
+   content: {
+    alignItems: 'center',
+    paddingVertical: 15,
   },
 
   splashOverlay: {
