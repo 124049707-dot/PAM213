@@ -10,6 +10,7 @@ import ScrollViewScreen from './ScrollViewScreen'
 import ModalScreen from './ModalScreen'
 import BottomSheetScreen from './BottomSheetScreen'
 import SesionScreen from './SesionScreen'
+import SectionListScreen from './SectionListScreen'
 export default function MenuScreen() {
     const [screen,setScreen]=useState('menu'); //declaracion del estado que debe tener una variable y funcion
 
@@ -28,6 +29,8 @@ export default function MenuScreen() {
             return<ActivityIndicatorScreen/> 
         case 'flatlist': 
             return<FlatListScreen/>
+        case 'sectionlist':
+            return<SectionListScreen/>  
         case 'modal': 
             return<ModalScreen/>    
         case 'bottomsheet': 
@@ -48,9 +51,11 @@ export default function MenuScreen() {
                      <Button title='Pract: ScrollView' onPress={()=>setScreen('scrollview')}color='#311c7cff' />
                      <Button title='Pract: ActivityIndicator' onPress={()=>setScreen('activityindicator')}color='#311c7cff' />
                      <Button title='Pract: FlatList' onPress={()=>setScreen('flatlist')}color='#311c7cff' />
+                     <Button title='Pract: SectionList' onPress={()=>setScreen('sectionlist')}color='#311c7cff' />
                      <Button title='Pract: Modal' onPress={()=>setScreen('modal')}color='#311c7cff' />
                      <Button title='Pract: BottomSheet' onPress={()=>setScreen('bottomsheet')}color='#311c7cff' />
                      <Button title='Pract: Inicio Sesion' onPress={()=>setScreen('iniciosesion')}color='#311c7cff' />
+                     
                    </View>
                     )    
     }  

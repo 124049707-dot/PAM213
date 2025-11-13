@@ -36,8 +36,7 @@ export default function BotonesScreen()  {
       </View>
 
       <View style={styles.footer}>
-        <Text style={[styles.estadoTexto, texto]}>
-          Modo Oscuro: {modoOscruro ? 'Activado' : 'Desactivado'}
+        <Text style={[styles.estadoTexto, texto]}>Modo Oscuro: {modoOscruro ? 'Activado' : 'Desactivado'}
         </Text>
       </View>
 
