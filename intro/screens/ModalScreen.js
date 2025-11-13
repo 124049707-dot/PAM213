@@ -25,6 +25,7 @@ export default function ModalScreen() {
         
         botonCerrar();
     };
+    
   const botonCerrar=()=>{setModalVisible(false);
     setDescripcion('');
     setNumFav('');
