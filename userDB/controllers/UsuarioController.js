@@ -6,7 +6,6 @@ export class UsuarioController {
     this.listeners = [];
   }
 
-  // Inicializar el controlador con el Service
   async initialize() {
     await DatabaseService.initialize();
   }
@@ -16,35 +15,46 @@ export class UsuarioController {
       const data = await DatabaseService.getAll();
       return data.map(u => new Usuario(u.id, u.nombre, u.fecha_creacion));
     } catch (error) {
-      console.error(' Error al obtener usuarios:', error);
-      throw new Error('No se pudieron cargar los usuarios');
+      console.error('Error al obtener usuarios:', error);
+      return []; 
     }
   }
 
   async crearUsuario(nombre) {
     try {
-      // 1. Validar datos
       Usuario.validar(nombre);
-
-      // 2. Insertar en BD
-      const nuevoUsuario = await DatabaseService.add(nombre.trim());
-
-      // 3. Notificar a los observadores
+      const nuevo = await DatabaseService.add(nombre.trim());
       this.notifyListeners();
-
-      // 4. Retornar usuario creado
-      return new Usuario(
-        nuevoUsuario.id,
-        nuevoUsuario.nombre,
-        nuevoUsuario.fecha_creacion
-      );
+      return new Usuario(nuevo.id, nuevo.nombre, nuevo.fecha_creacion);
     } catch (error) {
-      console.error('Error al crear usuario:', error);
+      console.error('Error al crear:', error);
       throw error;
     }
   }
 
-  // Sistema de observadores para actualizar la vista automáticamente
+  // IMPORTANTE: Renombrado a 'actualizarUsuario' para coincidir con la Vista
+  async actualizarUsuario(id, nuevoNombre) {
+    try {
+      Usuario.validar(nuevoNombre);
+      await DatabaseService.update(id, nuevoNombre.trim());
+      this.notifyListeners();
+    } catch (error) {
+      console.error('Error al actualizar:', error);
+      throw error;
+    }
+  }
+
+  async eliminarUsuario(id) {
+    try {
+      await DatabaseService.delete(id);
+      this.notifyListeners();
+    } catch (error) {
+      console.error('Error al eliminar:', error);
+      throw error;
+    }
+  }
+
+  // Patrón Observer
   addListener(callback) {
     this.listeners.push(callback);
   }
